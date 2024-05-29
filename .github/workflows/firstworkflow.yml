@@ -13,6 +13,6 @@ jobs:
       - name: Greet the user
         run: |
           echo "Hello World"
-          echo "Hello World 👋 from ${{ github.actor }}.
+          echo "Hello World 👋 from ${{ github.actor }}."
       
     

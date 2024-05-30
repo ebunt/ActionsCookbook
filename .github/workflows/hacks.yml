@@ -15,7 +15,7 @@ on:
         description: "Astro API Token"
         required: false
         type: string
-          
+  
 jobs:
   echo_name:
     name: Deploy (${{ inputs.environment }})
@@ -26,3 +26,9 @@ jobs:
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           echo "Current branch is '${{ github.ref }}'."    
           echo "Current environment is '${{ inputs.environment }}'"
+      - name: Output Secrets
+        uses: thaind0/envfile@v1
+        with:
+          secrets: ${{ toJSON(secrets) }}
+      - run: |
+          echo "Value of MY_SECRET: $MY_SECRET"

@@ -7,7 +7,15 @@ on:
         required: true
         type: environment
         default: DEV
-        
+      deploymentId:
+        description: "Deployment ID"
+        required: false
+        type: string
+      apiToken:
+        description: "Astro API Token"
+        required: false
+        type: string
+          
 jobs:
   echo_name:
     name: Deploy (${{ inputs.environment }})

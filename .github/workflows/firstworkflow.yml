@@ -4,6 +4,7 @@ on:
     inputs:
       environment:
         description: "Deployment Environment"
+        required: true
         type: environment
         default: Test
 

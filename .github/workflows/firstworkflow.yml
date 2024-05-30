@@ -3,7 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       environment:
+        description: "Deployment Environment"
         type: environment
+        default: Test
 
 jobs:
   first_job:

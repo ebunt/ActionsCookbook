@@ -30,5 +30,6 @@ jobs:
         uses: thaind0/envfile@v1
         with:
           secrets: ${{ toJSON(secrets) }}
+          file:
       - run: |
           echo "Value of MY_SECRET: $MY_SECRET"

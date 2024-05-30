@@ -18,5 +18,3 @@ jobs:
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           echo "Current branch is '${{ github.ref }}'."    
           echo "Current environment is '${{ inputs.environment }}'"
-'
-

@@ -28,5 +28,6 @@ jobs:
           echo "Current environment is '${{ inputs.environment }}'"
       - name: Output Secrets
         run: |
-          sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
+          extract=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
+          sec=$(echo($extract | sed 's/ //g'))
           echo "Value of MY_SECRET: $sec"

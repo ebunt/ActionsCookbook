@@ -21,15 +21,12 @@ jobs:
     name: Deploy (${{ inputs.environment }})
     runs-on: ubuntu-latest
     steps:
-      - name: Greet the user
+      - name: Print Variables
         run: |
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           echo "Current branch is '${{ github.ref }}'."    
           echo "Current environment is '${{ inputs.environment }}'"
       - name: Output Secrets
-        uses: thaind0/envfile@v1
-        with:
-          secrets: ${{ toJSON(secrets) }}
-          file:
-      - run: |
-          echo "Value of MY_SECRET: $MY_SECRET"
+        run: |
+          sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
+          echo "Value of MY_SECRET: $sec"

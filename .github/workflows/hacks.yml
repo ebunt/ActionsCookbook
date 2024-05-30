@@ -30,4 +30,4 @@ jobs:
         run: |
           extract=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
           sec=$(echo $extract | sed 's/ //g')
-          echo "Value of MY_SECRET: $sec"
+          echo "Value of MY_SECRET: $extract"

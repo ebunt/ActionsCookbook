@@ -10,7 +10,7 @@ on:
         
 jobs:
   echo_name:
-    name: Echo
+    name: Deploy (${{ inputs.environment }})
     runs-on: ubuntu-latest
     steps:
       - name: Greet the user
